@@ -1,6 +1,5 @@
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { PlayoutAudioWorkletProcessor } from '../../src/playout-audio-worklet-processor';
-import { spy } from 'sinon';
 
 describe('PlayoutAudioWorkletProcessor', () => {
     afterEach(() => {
@@ -8,7 +7,7 @@ describe('PlayoutAudioWorkletProcessor', () => {
     });
 
     beforeEach(() => {
-        self.AudioWorkletProcessor.prototype.port = { close: spy(), postMessage: spy() };
+        self.AudioWorkletProcessor.prototype.port = { close: vi.fn(), postMessage: vi.fn() };
     });
 
     describe('constructor()', () => {
@@ -358,14 +357,14 @@ describe('PlayoutAudioWorkletProcessor', () => {
                         playoutAudioWorkletProcessor.process([[]], [[outputChannelData]]);
 
                         expect(playoutAudioWorkletProcessor.port.postMessage).to.have.been.calledOnce;
-                        expect(playoutAudioWorkletProcessor.port.postMessage).to.have.been.calledWithExactly(null);
+                        expect(playoutAudioWorkletProcessor.port.postMessage).to.have.been.calledWith(null);
                     });
 
                     it('should not close the MessagePort', () => {
                         playoutAudioWorkletProcessor.process([[]], [[outputChannelData]]);
 
                         expect(playoutAudioWorkletProcessor.port.close).to.have.been.calledOnce;
-                        expect(playoutAudioWorkletProcessor.port.close).to.have.been.calledWithExactly();
+                        expect(playoutAudioWorkletProcessor.port.close).to.have.been.calledWith();
                     });
                 });
 
