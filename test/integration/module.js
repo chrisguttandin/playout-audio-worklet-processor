@@ -25,7 +25,6 @@ describe('module', () => {
                 channelData = new Float32Array(Array.from({ length: 128 }, () => Math.random()));
                 numberOfChannels = 1;
 
-                // eslint-disable-next-line no-undef
                 const sharedArrayBuffer = new SharedArrayBuffer(524);
 
                 readPointerView = new Uint32Array(sharedArrayBuffer, 4, 1);
@@ -133,7 +132,6 @@ describe('module', () => {
                 channelData = new Float32Array(Array.from({ length: 256 }, () => Math.random()));
                 numberOfChannels = 1;
 
-                // eslint-disable-next-line no-undef
                 const sharedArrayBuffer = new SharedArrayBuffer(1036);
 
                 readPointerView = new Uint32Array(sharedArrayBuffer, 4, 1);
@@ -243,7 +241,6 @@ describe('module', () => {
                 channelData = new Float32Array(Array.from({ length: 256 }, () => Math.random()));
                 numberOfChannels = 2;
 
-                // eslint-disable-next-line no-undef
                 const sharedArrayBuffer = new SharedArrayBuffer(1036);
 
                 readPointerView = new Uint32Array(sharedArrayBuffer, 4, 1);
@@ -359,7 +356,6 @@ describe('module', () => {
                 channelData = new Float32Array(Array.from({ length: 512 }, () => Math.random()));
                 numberOfChannels = 2;
 
-                // eslint-disable-next-line no-undef
                 const sharedArrayBuffer = new SharedArrayBuffer(2060);
 
                 readPointerView = new Uint32Array(sharedArrayBuffer, 4, 1);

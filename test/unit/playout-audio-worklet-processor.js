@@ -19,7 +19,6 @@ describe('PlayoutAudioWorkletProcessor', () => {
         let writePointerView;
 
         beforeEach(() => {
-            // eslint-disable-next-line no-undef
             const sharedArrayBuffer = new SharedArrayBuffer(2060);
 
             readPointerView = new Uint32Array(sharedArrayBuffer, 4, 1);
@@ -234,7 +233,6 @@ describe('PlayoutAudioWorkletProcessor', () => {
             channelData = new Float32Array(Array.from({ length: 128 }, () => Math.random()));
             outputChannelData = new Float32Array(Array.from({ length: 128 }, () => Math.random()));
 
-            // eslint-disable-next-line no-undef
             const sharedArrayBuffer = new SharedArrayBuffer(2060);
 
             readPointerView = new Uint32Array(sharedArrayBuffer, 4, 1);
